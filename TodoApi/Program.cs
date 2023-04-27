@@ -17,11 +17,10 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 app.UseCors("CorsPolicy");
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
 
 app.UseSwagger(options =>
 {
@@ -72,5 +71,7 @@ app.MapDelete(
         return Results.Ok(item);
     }
 );
+
+app.MapGet("/", () => "Server API is running")
 
 app.Run();
