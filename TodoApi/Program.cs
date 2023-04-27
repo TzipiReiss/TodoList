@@ -72,6 +72,4 @@ app.MapDelete(
     }
 );
 
-app.MapGet("/", () => "Server API is running")
-
 app.Run();
