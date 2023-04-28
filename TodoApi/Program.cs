@@ -17,10 +17,11 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 app.UseCors("CorsPolicy");
 
-
-app.UseSwagger();
-app.UseSwaggerUI();
-
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseSwagger(options =>
 {
