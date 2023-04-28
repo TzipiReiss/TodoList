@@ -18,7 +18,7 @@ public partial class TodoListContext : DbContext
     public virtual DbSet<Item> Items { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseMySql("server=bhihc3uklfwoqvuqs9cj-mysql.services.clever-cloud.com;user=ulpxjppdl3brbtmt;password=h1STrCG4mgiWKWaBCly3;database=bhihc3uklfwoqvuqs9cj");
+        => optionsBuilder.UseMySql("server=bhihc3uklfwoqvuqs9cj-mysql.services.clever-cloud.com;user=ulpxjppdl3brbtmt;password=h1STrCG4mgiWKWaBCly3;database=bhihc3uklfwoqvuqs9cj", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.32-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
