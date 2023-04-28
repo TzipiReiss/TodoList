@@ -18,7 +18,7 @@ public partial class TodoListContext : DbContext
     public virtual DbSet<Item> Items { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseMySql("name=TodoListDB", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.32-mysql"));
+        => optionsBuilder.UseMySql("server=bhihc3uklfwoqvuqs9cj-mysql.services.clever-cloud.com;user=ulpxjppdl3brbtmt;password=h1STrCG4mgiWKWaBCly3;database=bhihc3uklfwoqvuqs9cj");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -33,8 +33,6 @@ public partial class TodoListContext : DbContext
             entity.ToTable("Items");
 
             entity.Property(e => e.Name).HasMaxLength(100);
-            
-            entity.Property(e => e.IsComplete);
         });
 
         OnModelCreatingPartial(modelBuilder);
