@@ -72,6 +72,6 @@ app.MapDelete(
     }
 );
 
-app.MapGet("/", () =>"server api is running");
+app.MapGet("/", async () =>return await "server api is running");
 
 app.Run();
