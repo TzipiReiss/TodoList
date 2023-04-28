@@ -33,6 +33,8 @@ public partial class TodoListContext : DbContext
             entity.ToTable("Items");
 
             entity.Property(e => e.Name).HasMaxLength(100);
+            
+            entity.Property(e => e.IsComplete);
         });
 
         OnModelCreatingPartial(modelBuilder);
