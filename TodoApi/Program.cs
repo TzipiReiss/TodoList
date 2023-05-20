@@ -17,23 +17,6 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 app.UseCors("CorsPolicy");
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseSwagger(options =>
-{
-    options.SerializeAsV2 = true;
-});
-
-app.UseSwaggerUI(options =>
-{
-    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-    options.RoutePrefix = string.Empty;
-});
-
 app.MapGet("/items", async (TodoListContext db) => await db.Items.ToListAsync());
 
 app.MapPost(
